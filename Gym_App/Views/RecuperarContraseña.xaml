@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gym_App.RecuperarContraseña"
+             Title="Recuperar Contraseña"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+        <StackLayout Padding="30" VerticalOptions="CenterAndExpand" Spacing="20">
+
+                <!--<ImageButton Source="atras.jpg"
+                    
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Margin="0"
+                    WidthRequest="20"
+                    HeightRequest="20"/>-->
+            
+                <Image Source="recuperar.jpg" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   HeightRequest="190"
+                   WidthRequest="190"/>
+
+            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,10,0,0">
+                <Entry x:Name="codigoEntry"
+                       Placeholder="Ingresa tu Código institucional"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       Keyboard="Email"
+                       BackgroundColor="White"
+                       HorizontalOptions="FillAndExpand" />
+            </Frame>
+
+            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,10,0,0">
+                <Entry x:Name="nuevaContraseñaEntry"
+                       Placeholder="Ingresa tu nueva contraseña"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       IsPassword="True"
+                       BackgroundColor="White"
+                       HorizontalOptions="FillAndExpand" />
+            </Frame>
+
+            <Button Text="Guardar cambios"
+                   Clicked="GuardarCambios_Clicked"
+                    BackgroundColor="#3393FF"
+                    TextColor="White"
+                    CornerRadius="5"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,20,0,0" />
+
+
+            <Label Text="©Todos los derechos reservados UNIVO 2024."
+                   FontSize="Small"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="EndAndExpand"
+                   Margin="0,200,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
