@@ -8,13 +8,7 @@
     <ContentPage.Content>
         <StackLayout Padding="30" VerticalOptions="CenterAndExpand" Spacing="20">
 
-                <!--<ImageButton Source="atras.jpg"
-                    
-                    HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    Margin="0"
-                    WidthRequest="20"
-                    HeightRequest="20"/>-->
+                
             
                 <Image Source="recuperar.jpg" 
                    HorizontalOptions="Center" 

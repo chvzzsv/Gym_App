@@ -11,4 +11,3 @@ public class Usuario
     public string Contraseña { get; set; }
     public string CodigoRecuperacion { get; set; }
 }
-

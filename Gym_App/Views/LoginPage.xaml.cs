@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym_App.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace Gym_App
 
             if (credencialesValidas)
             {
-                Navigation.PushAsync(new MainPage());
+                Navigation.PushAsync(new Dashboard());
             }
             else
             {

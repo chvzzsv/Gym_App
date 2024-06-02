@@ -27,16 +27,16 @@ namespace Gym_App
 
             if (_databaseService.ActualizarContraseña(nombreUsuario, nuevaContraseña))
             {
-                // La contraseña se actualizó correctamente
+                
                 DisplayAlert("Éxito", "Contraseña actualizada correctamente", "OK");
             }
             else
             {
-                // El usuario no existe en la base de datos
+                
                 DisplayAlert("Error", "El usuario no existe en la base de datos.", "OK");
             }
 
-            Navigation.PopAsync(); // Regresa a la página de inicio de sesión
+            Navigation.PopAsync(); 
         }
     }
 }

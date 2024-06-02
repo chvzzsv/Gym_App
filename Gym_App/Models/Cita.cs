@@ -9,8 +9,9 @@ namespace Gym_App.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Nombre { get; set; }
+
         public DateTime Fecha { get; set; }
-        public TimeSpan Hora { get; set; }
+        public string Rutina { get; set; }
+        public string Hora { get; set; }
     }
 }

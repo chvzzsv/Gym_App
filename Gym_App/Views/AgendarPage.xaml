@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gym_App.Views.AgendarPage"
+             BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Define el estilo para el título de la TableSection -->
+            <Style x:Key="TableSectionTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <!-- Estilo para otros elementos -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TitleColor" Value="Black" />
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#017BFF" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="CornerRadius" Value="5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Agendar visita al Gym"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Fecha:" />
+            <DatePicker x:Name="SemanaPicker" Format="dd/MM/yyyy" />
+
+            <Label Text="Dia:" />
+            <Picker x:Name="NombreEntry" Title="Seleccione una Rutina">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Pierna</x:String>
+                        <x:String>Brazos</x:String>
+                        <x:String>Espalda</x:String>
+                        <x:String>Full Body</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Horario:" TextColor="Black"/>
+            <Picker x:Name="Hora" Title="Seleccione un horario">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Mañana</x:String>
+                        <x:String>Tarde</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Agregar" Clicked="Agregar_Clicked" />
+
+            <TableView x:Name="HorariosTableView" BackgroundColor="White" HasUnevenRows="True">
+                <TableRoot>
+                    <!-- Utilizamos una ViewCell personalizada para el título -->
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#CCCCCC" Padding="10">
+                                <Label Text="Visitas Agendadas" Style="{StaticResource TableSectionTitle}" />
+                            </StackLayout>
+                        </ViewCell>
+                        <!-- Aquí se mostrarán las filas de datos -->
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

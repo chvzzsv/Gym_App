@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SQLite;
 using System.IO;
+using SQLite;
 using Xamarin.Essentials;
 using Gym_App.Models;
 

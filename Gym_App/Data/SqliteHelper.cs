@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-//public interface IFileHelper
-//{
-//    string GetLocalFilePath(string filename);
-//}
+namespace Gym_App.Data
+{
+    class SqliteHelper
+    {
+    }
+}

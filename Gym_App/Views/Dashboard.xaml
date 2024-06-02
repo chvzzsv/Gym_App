@@ -1,0 +1,87 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gym_App.Views.Dashboard"
+             BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="White" Padding="10" Grid.Row="0">
+                <Label Text="UNIVO GYM"
+                       HorizontalOptions="Center"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       Margin="0,0,0,-10" />
+
+                <Label Text="Un nuevo reto comienza, ¿Estás listo?."
+                       HorizontalOptions="Center"
+                       FontSize="20"
+                       TextColor="#2077BD"/>
+
+                <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
+                    <ImageButton x:Name="AgendarButton"
+                                 Source="agendar.jpg"
+                                 Aspect="Fill"
+                                 WidthRequest="150"
+                                 HeightRequest="190"
+                                 Margin="0,0,0,0"
+                                 AutomationProperties.IsInAccessibleTree="True" />
+                </Frame>
+
+                <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
+                    <ImageButton x:Name="RegistrarButton"
+                                 Source="Registrar.jpg"
+                                 Aspect="Fill"
+                                 WidthRequest="150"
+                                 HeightRequest="190"
+                                 Margin="0,0,0,0" />
+                </Frame>
+
+                <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
+                    <ImageButton x:Name="ConsejosButton"
+                                 Source="consejos.jpg"
+                                 Aspect="Fill"
+                                 HeightRequest="190"
+                                 Margin="0,0,0,0" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="10" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <ImageButton Source="IconHome.png" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="2,0" 
+                             BackgroundColor="Transparent" 
+                             BorderColor="Transparent"
+                             BorderWidth="0"/>
+                <ImageButton Source="Notiicon.png" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="2,0" 
+                             BackgroundColor="Transparent" 
+                             BorderColor="Transparent"
+                             BorderWidth="0"/>
+                <ImageButton Source="infoicon.png" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="2,0" 
+                             BackgroundColor="Transparent" 
+                             BorderColor="Transparent"
+                             BorderWidth="0"/>
+                <ImageButton Source="Usuarioicon.png" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="2,0" 
+                             BackgroundColor="Transparent" 
+                             BorderColor="Transparent"
+                             BorderWidth="0"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

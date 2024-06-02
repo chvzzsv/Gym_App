@@ -14,10 +14,11 @@
                    WidthRequest="190"/>
             
 
-                <Label Text="LOGIN GYM UNIVO"
+                <Label Text="LOGIN UNIVO GYM "
                    FontSize="Large"
                    TextColor="#3393FF"
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
 
             <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,10,0,0">
                 <Entry x:Name="usernameEntry"

@@ -104,6 +104,14 @@
     <AndroidResource Include="Resources\drawable\iconoGym.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ICONO.png" />
+    <AndroidResource Include="Resources\drawable\agendar.jpg" />
+    <AndroidResource Include="Resources\drawable\registrar.jpg" />
+    <AndroidResource Include="Resources\drawable\consejos.jpg" />
+    <AndroidResource Include="Resources\drawable\IconHome.png" />
+    <AndroidResource Include="Resources\drawable\infoicon.png" />
+    <AndroidResource Include="Resources\drawable\Notiicon.png" />
+    <AndroidResource Include="Resources\drawable\Usuarioicon.png" />
     <Content Include="Resources\mipmap-anydpi-v26\iconoGym.jpg" />
     <Content Include="Resources\mipmap-hdpi\iconoGym.jpg" />
     <Content Include="Resources\mipmap-mdpi\iconoGym.jpg" />

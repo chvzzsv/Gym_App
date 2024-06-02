@@ -2,7 +2,7 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 public class DatabaseService
 {
@@ -18,7 +18,6 @@ public class DatabaseService
         var usuario = db.Table<Usuario>().FirstOrDefault(u => u.Nombre == nombre);
         if (usuario != null)
         {
-            // Verificar la contraseña con la contraseña actualizada del usuario
             return contraseña == usuario.Contraseña;
         }
         return false;
@@ -38,6 +37,7 @@ public class DatabaseService
     {
         return db.Table<Cita>().ToList();
     }
+
     public void AgregarUsuarioDePrueba()
     {
         var usuario = new Usuario { Nombre = "admin", Contraseña = "1234" };
@@ -45,6 +45,7 @@ public class DatabaseService
         var usuario2 = new Usuario { Nombre = "u20210861", Contraseña = "123" };
         db.Insert(usuario2);
     }
+
     public Usuario ObtenerUsuarioPorNombre(string nombre)
     {
         return db.Table<Usuario>().FirstOrDefault(u => u.Nombre == nombre);
@@ -68,5 +69,15 @@ public class DatabaseService
         {
             return false; // El usuario no existe en la base de datos
         }
+    }
+
+    public void ActualizarCita(Cita cita)
+    {
+        db.Update(cita);
+    }
+
+    public void EliminarCita(Cita cita)
+    {
+        db.Delete(cita);
     }
 }
