@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym_App.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Gym_App
 
         public RecuperarContraseña()
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             _databaseService = new DatabaseService();
         }
@@ -37,6 +39,12 @@ namespace Gym_App
             }
 
             Navigation.PopAsync(); 
+        }
+
+        private async void OnBackButtonClickedRecuperar(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPage());
+
         }
     }
 }

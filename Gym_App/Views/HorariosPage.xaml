@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gym_App.Views.HorariosPage"
+             BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <Label Text="Horarios"
+               FontSize="45"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"
+               FontAttributes="Bold" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Padding="10" Spacing="10" Grid.Row="0">
+             
+                <Label Text="Bienvenido al Gimnasio"
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#009DFC" />
+
+                <Image Source="calendario.png"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       Margin="0,10,0,10" />
+
+                <Frame BackgroundColor="#FFFACD" CornerRadius="15" Padding="10" Margin="0,20,0,10">
+                    <StackLayout BackgroundColor="#FFFACD">
+                        <Label Text="HORARIOS"
+                               FontSize="40"
+                               FontAttributes="Bold"
+                               TextColor="#009DFC"
+                               HorizontalOptions="Center" />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Lunes" Grid.Row="0" Grid.Column="0" FontSize="20" TextColor="Black" HorizontalOptions="Start" />
+                            <Label Text="8:00 am a 3:00 pm" Grid.Row="0" Grid.Column="1" FontSize="20" TextColor="Black" HorizontalOptions="End" />
+
+                            <Label Text="Martes" Grid.Row="1" Grid.Column="0" FontSize="20" TextColor="Black" HorizontalOptions="Start" />
+                            <Label Text="8:00 am a 3:00 pm" Grid.Row="1" Grid.Column="1" FontSize="20" TextColor="Black" HorizontalOptions="End" />
+
+                            <Label Text="Miércoles" Grid.Row="2" Grid.Column="0" FontSize="20" TextColor="Black" HorizontalOptions="Start" />
+                            <Label Text="8:00 am a 3:00 pm" Grid.Row="2" Grid.Column="1" FontSize="20" TextColor="Black" HorizontalOptions="End" />
+
+                            <Label Text="Jueves" Grid.Row="3" Grid.Column="0" FontSize="20" TextColor="Black" HorizontalOptions="Start" />
+                            <Label Text="8:00 am a 3:00 pm" Grid.Row="3" Grid.Column="1" FontSize="20" TextColor="Black" HorizontalOptions="End" />
+
+                            <Label Text="Viernes" Grid.Row="4" Grid.Column="0" FontSize="20" TextColor="Black" HorizontalOptions="Start" />
+                            <Label Text="8:00 am a 3:00 pm" Grid.Row="4" Grid.Column="1" FontSize="20" TextColor="Black" HorizontalOptions="End" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Todos los derechos reservados UNIVO 2024"
+                       FontSize="Small"
+                       HorizontalOptions="Center"
+                       TextColor="#009DFC" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="10" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <ImageButton Source="IconHome.png"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="2,0"
+                             BackgroundColor="Transparent"
+                             BorderColor="Transparent"
+                             BorderWidth="0" 
+                            Clicked="HomeButtonHorario_Clicked"/>
+
+                <ImageButton Source="infoicon.png"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="2,0"
+                             BackgroundColor="Transparent"
+                             BorderColor="Transparent"
+                             BorderWidth="0" 
+                             Clicked="InfoButton_Clicked"/>
+                <ImageButton Source="atras2.png"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="2,0"
+                             BackgroundColor="Transparent"
+                             BorderColor="Transparent"
+                             BorderWidth="0"
+                              Clicked="HomeButtonReturn_Clicked"
+/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -3,7 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gym_App.Views.AgendarPage"
              BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
 
+    <NavigationPage.TitleView>
+        <Label Text="Citas"
+           FontSize="60"
+           TextColor="White"
+           HorizontalOptions="CenterAndExpand"
+           FontAttributes="Bold" />
+    </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
             <!-- Define el estilo para el título de la TableSection -->
@@ -38,17 +48,24 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20">
+            <ImageButton Source="atras2.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         BackgroundColor="Transparent"
+                         Clicked="OnBackButtonClicked"
+                         WidthRequest="30"
+                         HeightRequest="30" />
             <Label Text="Agendar visita al Gym"
-                   TextColor="Black"
                    FontAttributes="Bold"
+                   TextColor="#009DFC"
                    FontSize="Title"
                    HorizontalOptions="Center" />
 
             <Label Text="Fecha:" />
             <DatePicker x:Name="SemanaPicker" Format="dd/MM/yyyy" />
 
-            <Label Text="Dia:" />
-            <Picker x:Name="NombreEntry" Title="Seleccione una Rutina">
+            <Label Text="Rutina:" />
+            <Picker x:Name="NombreEntry" Title="Seleccione una Rutina" SelectedIndexChanged="NombreEntry_SelectedIndexChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Pierna</x:String>
@@ -59,15 +76,33 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Label Text="Horario:" TextColor="Black"/>
-            <Picker x:Name="Hora" Title="Seleccione un horario">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Mañana</x:String>
-                        <x:String>Tarde</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
+            <Label Text="Hora:" TextColor="Black" Margin="0,10,0,0" />
+
+            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,10,0,0">
+                <Entry x:Name="HoraEntry"
+           Placeholder="Hora (ej. 9:00)"
+           TextColor="Black"
+           PlaceholderColor="Gray"
+           Keyboard="Text"
+           BackgroundColor="White"
+           HorizontalOptions="FillAndExpand" />
+            </Frame>
+
+            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,10,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="AM/PM:" TextColor="Black" VerticalOptions="Center" Margin="5,0,0,0" />
+                    <Picker x:Name="AmPmPicker" WidthRequest="100" TextColor="Black" Margin="0,0,0,0">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>AM</x:String>
+                                <x:String>PM</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+            </Frame>
+
+
 
             <Button Text="Agregar" Clicked="Agregar_Clicked" />
 

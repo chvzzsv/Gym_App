@@ -13,5 +13,7 @@ namespace Gym_App.Models
         public DateTime Fecha { get; set; }
         public string Rutina { get; set; }
         public string Hora { get; set; }
+
+        public int UsuarioId { get; set; } // Relación con el usuario
     }
 }

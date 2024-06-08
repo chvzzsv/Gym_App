@@ -2,15 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gym_App.RecuperarContraseña"
-             Title="Recuperar Contraseña"
+           
              BackgroundColor="White">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+    <Label Text="Recuperar Contraseña"
+               FontSize="40"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"
+               FontAttributes="Bold" />
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Padding="30" VerticalOptions="CenterAndExpand" Spacing="20">
 
-                
-            
-                <Image Source="recuperar.jpg" 
+            <ImageButton Source="atras2.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Center"
+               BackgroundColor="Transparent"
+               Clicked="OnBackButtonClickedRecuperar"
+               WidthRequest="30"
+               HeightRequest="30" />
+
+            <Image Source="recuperar.jpg" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center" 
                    HeightRequest="190"
@@ -52,5 +67,9 @@
                    VerticalOptions="EndAndExpand"
                    Margin="0,200,0,0" />
         </StackLayout>
+        
+       
     </ContentPage.Content>
+    
+    
 </ContentPage>

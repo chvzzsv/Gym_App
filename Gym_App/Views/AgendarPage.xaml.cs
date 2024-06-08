@@ -12,6 +12,7 @@ namespace Gym_App.Views
 
         public AgendarPage()
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             dbService = new DatabaseService();
             HorariosTableView.Root = new TableRoot();
@@ -26,7 +27,8 @@ namespace Gym_App.Views
                 {
                     Fecha = SemanaPicker.Date,
                     Rutina = NombreEntry.SelectedItem.ToString(),
-                    Hora = Hora.SelectedItem.ToString()
+                    Hora = ObtenerHoraCompleta(),  // Obtener la hora completa desde el Entry y Picker
+                    UsuarioId = DatabaseService.UsuarioActual.Id // Asigna el ID del usuario actual
                 };
                 dbService.AgregarCita(cita);
                 citas.Add(cita);
@@ -38,11 +40,17 @@ namespace Gym_App.Views
             }
         }
 
+        private string ObtenerHoraCompleta()
+        {
+            return $"{HoraEntry.Text} {AmPmPicker.SelectedItem}";
+        }
+
         private bool ValidarCampos()
         {
             return SemanaPicker.Date != null &&
                    NombreEntry.SelectedItem != null &&
-                   Hora.SelectedItem != null;
+                   !string.IsNullOrWhiteSpace(HoraEntry.Text) &&
+                   AmPmPicker.SelectedItem != null;
         }
 
         private async void Modificar_Clicked(object sender, EventArgs e)
@@ -99,7 +107,7 @@ namespace Gym_App.Views
                     {
                         new Label { Text = "  Fecha", FontAttributes = FontAttributes.Bold, TextColor = Color.White },
                         new Label { Text = "   Rutina", FontAttributes = FontAttributes.Bold, TextColor = Color.White },
-                        new Label { Text = "   Horario", FontAttributes = FontAttributes.Bold, TextColor = Color.White }
+                        new Label { Text = "   Hora", FontAttributes = FontAttributes.Bold, TextColor = Color.White }
                     }
                 }
             });
@@ -208,5 +216,21 @@ namespace Gym_App.Views
         {
             DisplayAlert("Error", mensaje, "Aceptar");
         }
+
+        private void NombreEntry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (NombreEntry.SelectedIndex != -1)
+            {
+                var picker = sender as Picker;
+                var selectedTextColor = Color.Black;
+                picker.TextColor = selectedTextColor;
+            }
+        }
+        private async void OnBackButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Dashboard());
+
+        }
+
     }
 }

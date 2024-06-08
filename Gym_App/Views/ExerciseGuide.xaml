@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gym_App.Views.ExerciseGuide"
+             BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <Label Text="Guía de Ejercicios"
+               FontSize="45"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"
+               FontAttributes="Bold" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="White" Padding="10" Grid.Row="0">
+
+                <Frame CornerRadius="20" Padding="0" Margin="50,10,65,0">
+                    <ImageButton
+                   Source="iconoGym.jpg"
+                   Aspect="AspectFit"
+                   Margin="0,0,0,0"
+                   AutomationProperties.IsInAccessibleTree="True" 
+                   />
+                </Frame>
+
+                <Label Text="TU GUIA COMPLETA DE EJERCICIOS"
+                       HorizontalOptions="Center"
+                       
+                       FontSize="25"
+                       FontAttributes="Bold"
+                       TextColor="#009DFC"
+                       Margin="0,0,0,-10" />
+
+
+                <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
+                    <ImageButton x:Name="Ejercicio1Button"
+                                 Source="pectorial.jpg"
+                                 Aspect="AspectFit"
+                                 Margin="0,0,0,0"
+                                 AutomationProperties.IsInAccessibleTree="True" 
+                                  Clicked="Ejercicio1Button_Clicked"/>
+                </Frame>
+
+                <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
+                    <ImageButton x:Name="Ejercicio2Button"
+                                 Source="espalda.jpg"
+                                 Aspect="AspectFit"
+                                 Margin="0,0,0,0"
+                                  Clicked="Ejercicio1ButtonEspalda_Clicked"/>
+                </Frame>
+
+                <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
+                    <ImageButton x:Name="Ejercicio3Button"
+                                 Source="biceps.jpg"
+                                 Aspect="AspectFit"
+                                 Margin="0,0,0,0" 
+                                  Clicked="ButtonBiceps_Clicked"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="10" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <ImageButton Source="IconHome.png" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="2,0" 
+                             BackgroundColor="Transparent" 
+                             BorderColor="Transparent"
+                             BorderWidth="0"
+                              Clicked="HomeButtonEspalda_Clicked"/>
+             
+                <ImageButton x:Name="CerrarSesionButton" 
+                             Source="atras2.png" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="2,0" 
+                             BackgroundColor="Transparent" 
+                             BorderColor="Transparent"
+                             BorderWidth="0"
+                             Clicked="ReturnButton_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

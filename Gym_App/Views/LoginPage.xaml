@@ -1,67 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Gym_App.LoginPage"
-             BackgroundColor="White">
-
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="Gym_App.LoginPage"
+       BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <Label Text="INICIA SESIÓN"
+        FontSize="60"
+        TextColor="White"
+        HorizontalOptions="CenterAndExpand"
+        FontAttributes="Bold" />
+    </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Padding="30" VerticalOptions="CenterAndExpand" Spacing="20">
-            
-            <Image Source="usuarioimg.jpg" 
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Center" 
-                   HeightRequest="190"
-                   WidthRequest="190"/>
-            
-
-                <Label Text="LOGIN UNIVO GYM "
-                   FontSize="Large"
-                   TextColor="#3393FF"
-                   HorizontalOptions="Center"
-                       FontAttributes="Bold"/>
-
-            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,10,0,0">
-                <Entry x:Name="usernameEntry"
-                       Placeholder="Carnet"
-                       TextColor="Black"
-                       PlaceholderColor="Gray"
-                       Keyboard="Email"
-                       BackgroundColor="White"
-                       HorizontalOptions="FillAndExpand" />
+        <Grid Padding="30" VerticalOptions="CenterAndExpand" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <!-- Agregar una nueva fila con altura definida -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Frame CornerRadius="20" Padding="0" Margin="63,10,65,0">
+                <ImageButton
+    Source="usuarioimg.jpg"
+    Aspect="AspectFit"
+    Margin="0,0,0,0"
+    AutomationProperties.IsInAccessibleTree="True" 
+    />
             </Frame>
 
-            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,10,0,0">
+            <Label Text="LOGIN UNIVO GYM"
+          FontSize="48"
+          TextColor="#3393FF"
+          HorizontalOptions="Center"
+          FontAttributes="Bold"
+          Grid.Row="1"
+          Grid.Column="0"
+          Grid.ColumnSpan="2" />
+
+            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,0,0,0"
+          Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <Entry x:Name="usernameEntry"
+            Placeholder="Carnet"
+            TextColor="Black"
+            PlaceholderColor="Gray"
+            Keyboard="Email"
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            HeightRequest="50" />
+            </Frame>
+
+            <Frame BorderColor="LightGray" CornerRadius="5" Padding="0" Margin="0,18,0,0"
+          Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
                 <Entry x:Name="passwordEntry"
-                       Placeholder="Contraseña"
-                       TextColor="Black"
-                       PlaceholderColor="Gray"
-                       IsPassword="True"
-                       BackgroundColor="White"
-                       HorizontalOptions="FillAndExpand" />
+            Placeholder="Contraseña"
+            TextColor="Black"
+            PlaceholderColor="Gray"
+            IsPassword="True"
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            HeightRequest="50" />
             </Frame>
 
             <Button Text="Iniciar Sesión"
-                    BackgroundColor="#3393FF"
-                    TextColor="White"
-                    Clicked="IniciarSesion_Clicked"
-                    CornerRadius="5"
-                    HorizontalOptions="FillAndExpand"
-                    Margin="0,20,0,0" />
+          BackgroundColor="#3393FF"
+          TextColor="White"
+          Clicked="IniciarSesion_Clicked"
+          CornerRadius="5"
+          HorizontalOptions="FillAndExpand"
+          Margin="0,20,0,0"
+          Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
 
             <Button Text="Recuperar Contraseña"
-                    Clicked="RecuperarContraseña_Clicked"
-                    BackgroundColor="#3393FF"
-                    TextColor="White"
-                    CornerRadius="5"
-                    HorizontalOptions="FillAndExpand"
-                    Margin="0,10,0,0" />
+          Clicked="RecuperarContraseña_Clicked"
+          BackgroundColor="#3393FF"
+          TextColor="White"
+          CornerRadius="5"
+          HorizontalOptions="FillAndExpand"
+          Margin="0,10,0,0"
+          Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" />
 
             <Label Text="©Todos los derechos reservados UNIVO 2024."
-                   FontSize="Small"
-                   TextColor="Gray"
-                   HorizontalOptions="Center"
-                   VerticalOptions="EndAndExpand"
-                   Margin="0,100,0,0" />
-        </StackLayout>
+          FontSize="Small"
+          TextColor="Gray"
+          HorizontalOptions="Center"
+          Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" />
+            <!-- Mover el Label a la nueva fila -->
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -15,11 +15,12 @@ namespace Gym_App
         private readonly DatabaseService _databaseService;
         public LoginPage()
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             _databaseService = new DatabaseService();
         }
 
-        private void IniciarSesion_Clicked(object sender, EventArgs e)
+        private async void IniciarSesion_Clicked(object sender, EventArgs e)
         {
             string usuario = usernameEntry.Text;
             string contraseña = passwordEntry.Text;
@@ -28,11 +29,12 @@ namespace Gym_App
 
             if (credencialesValidas)
             {
-                Navigation.PushAsync(new Dashboard());
+                // Navegar al Dashboard
+                Application.Current.MainPage = new NavigationPage(new Dashboard());
             }
             else
             {
-                DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
+                await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
             }
         }
         private async void RecuperarContraseña_Clicked(object sender, EventArgs e)

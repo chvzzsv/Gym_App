@@ -1,9 +1,10 @@
 ﻿using System;
-
+using Xamarin.Forms.Platform.Android;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Android.Views;
 
 namespace Gym_App.Droid
 {
@@ -13,6 +14,15 @@ namespace Gym_App.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            // Pantalla completa y ocultar botones de navegación
+            Window.AddFlags(WindowManagerFlags.Fullscreen);
+            Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(
+                SystemUiFlags.ImmersiveSticky |
+                SystemUiFlags.LayoutStable |
+                SystemUiFlags.LayoutHideNavigation |
+                SystemUiFlags.LayoutFullscreen |
+                SystemUiFlags.HideNavigation |
+                SystemUiFlags.Fullscreen);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

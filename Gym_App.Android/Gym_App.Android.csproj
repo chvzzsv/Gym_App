@@ -55,6 +55,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
@@ -112,6 +115,44 @@
     <AndroidResource Include="Resources\drawable\infoicon.png" />
     <AndroidResource Include="Resources\drawable\Notiicon.png" />
     <AndroidResource Include="Resources\drawable\Usuarioicon.png" />
+    <AndroidResource Include="Resources\drawable\cerrarsesion.png" />
+    <AndroidResource Include="Resources\drawable\atras2.png" />
+    <AndroidResource Include="Resources\drawable\pectorial.png" />
+    <AndroidResource Include="Resources\drawable\espalda.png" />
+    <AndroidResource Include="Resources\drawable\biceps.png" />
+    <AndroidResource Include="Resources\drawable\guia.png" />
+    <AndroidResource Include="Resources\drawable\pectoral2.png" />
+    <AndroidResource Include="Resources\drawable\pectoral3.png" />
+    <AndroidResource Include="Resources\drawable\pectoral1.png" />
+    <AndroidResource Include="Resources\drawable\press.gif" />
+    <AndroidResource Include="Resources\drawable\pressmancuerna.png" />
+    <AndroidResource Include="Resources\drawable\pararelo.png" />
+    <AndroidResource Include="Resources\drawable\remo.jpg" />
+    <AndroidResource Include="Resources\drawable\remoconbarra.jpg" />
+    <AndroidResource Include="Resources\drawable\jalon.png" />
+    <AndroidResource Include="Resources\drawable\espalda2.png" />
+    <AndroidResource Include="Resources\drawable\espalda3.png" />
+    <AndroidResource Include="Resources\drawable\espalda1.png" />
+    <AndroidResource Include="Resources\drawable\logoespalda.jpg" />
+    <AndroidResource Include="Resources\drawable\logopectoral.png" />
+    <AndroidResource Include="Resources\drawable\espaldalogo.png" />
+    <AndroidResource Include="Resources\drawable\biceps1.png" />
+    <AndroidResource Include="Resources\drawable\biceps2.png" />
+    <AndroidResource Include="Resources\drawable\biceps3.png" />
+    <AndroidResource Include="Resources\drawable\logoBiceps.png" />
+    <AndroidResource Include="Resources\drawable\bicepsLogo.png" />
+    <AndroidResource Include="Resources\drawable\curlbarra.png" />
+    <AndroidResource Include="Resources\drawable\Daco.png" />
+    <AndroidResource Include="Resources\drawable\curlmancuerna.png" />
+    <AndroidResource Include="Resources\drawable\curlbanca.png" />
+    <AndroidResource Include="Resources\drawable\guia2.png" />
+    <AndroidResource Include="Resources\drawable\store.png" />
+    <AndroidResource Include="Resources\drawable\calendario.png" />
+    <AndroidResource Include="Resources\drawable\calen.png" />
+    <AndroidResource Include="Resources\drawable\instagram.png" />
+    <AndroidResource Include="Resources\drawable\facebook.png" />
+    <AndroidResource Include="Resources\drawable\twitter.png" />
+    <AndroidResource Include="Resources\drawable\whatsapp.png" />
     <Content Include="Resources\mipmap-anydpi-v26\iconoGym.jpg" />
     <Content Include="Resources\mipmap-hdpi\iconoGym.jpg" />
     <Content Include="Resources\mipmap-mdpi\iconoGym.jpg" />

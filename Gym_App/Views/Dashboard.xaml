@@ -6,6 +6,13 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
     </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <Label Text="Menu Principal"
+               FontSize="50"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"
+               FontAttributes="Bold" />
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <Grid>
@@ -19,13 +26,21 @@
                        HorizontalOptions="Center"
                        FontSize="24"
                        FontAttributes="Bold"
-                       TextColor="Black"
+                       TextColor="#009DFC"
                        Margin="0,0,0,-10" />
 
-                <Label Text="Un nuevo reto comienza, ¿Estás listo?."
+                <Label Text="Un nuevo reto comienza,¿Estás listo?."
                        HorizontalOptions="Center"
                        FontSize="20"
-                       TextColor="#2077BD"/>
+                        FontAttributes="Bold"
+                       TextColor="#007AA2"/>
+                
+                <Label x:Name="UsuarioLabel"
+                       HorizontalOptions="Center"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                     TextColor="#009DFC"
+                       Margin="0,0,0,-10" />
 
                 <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
                     <ImageButton x:Name="AgendarButton"
@@ -39,7 +54,7 @@
 
                 <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
                     <ImageButton x:Name="RegistrarButton"
-                                 Source="Registrar.jpg"
+                                 Source="guia.jpg"
                                  Aspect="Fill"
                                  WidthRequest="150"
                                  HeightRequest="190"
@@ -48,38 +63,44 @@
 
                 <Frame CornerRadius="20" Padding="0" Margin="15,5,15,0">
                     <ImageButton x:Name="ConsejosButton"
-                                 Source="consejos.jpg"
+                                 Source="store.jpg"
                                  Aspect="Fill"
                                  HeightRequest="190"
                                  Margin="0,0,0,0" />
                 </Frame>
+
+                <Label Text="©Todos los derechos reservados UNIVO 2024."
+       FontSize="Small"
+       TextColor="Gray"
+       HorizontalOptions="Center"
+       Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="10" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <ImageButton Source="IconHome.png" 
+               
+                <ImageButton Source="calen.png" 
                              HorizontalOptions="CenterAndExpand" 
                              Margin="2,0" 
                              BackgroundColor="Transparent" 
                              BorderColor="Transparent"
-                             BorderWidth="0"/>
-                <ImageButton Source="Notiicon.png" 
-                             HorizontalOptions="CenterAndExpand" 
-                             Margin="2,0" 
-                             BackgroundColor="Transparent" 
-                             BorderColor="Transparent"
-                             BorderWidth="0"/>
+                             BorderWidth="0"
+                              Clicked="HorarioButton_Clicked"/>
                 <ImageButton Source="infoicon.png" 
                              HorizontalOptions="CenterAndExpand" 
                              Margin="2,0" 
                              BackgroundColor="Transparent" 
                              BorderColor="Transparent"
-                             BorderWidth="0"/>
-                <ImageButton Source="Usuarioicon.png" 
+                             BorderWidth="0"
+                              Clicked="InfoButton_Clicked"/>
+
+                <ImageButton x:Name="CerrarSesionButton" 
+                             Source="cerrarsesion.png" 
                              HorizontalOptions="CenterAndExpand" 
                              Margin="2,0" 
                              BackgroundColor="Transparent" 
                              BorderColor="Transparent"
-                             BorderWidth="0"/>
+                             BorderWidth="0"
+                             Clicked="CerrarSesionButton_Clicked"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

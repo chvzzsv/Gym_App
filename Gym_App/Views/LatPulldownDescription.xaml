@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gym_App.Views.LatPulldownDescription"
+             BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ICONO.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <Label Text="Espalda Ejercicios"
+               FontSize="45"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"
+               FontAttributes="Bold" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="White" Padding="10" Grid.Row="0">
+                <Image Source="jalon.png"  HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HeightRequest="350"
+               WidthRequest="350"
+               Margin="0,10,0,10" />
+
+                <Label x:Name="ExerciseNameLabel"
+                       HorizontalOptions="Center"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="#009DFC"
+                       Margin="0,0,0,-10" />
+
+                <Label x:Name="ExerciseDescriptionLabel"
+                       FontSize="25"
+                       TextColor="Black"
+                       Margin="0,10,0,0" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="10" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <ImageButton Source="IconHome.png"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="2,0"
+                             BackgroundColor="Transparent"
+                             BorderColor="Transparent"
+                             BorderWidth="0" 
+                             Clicked="HomeButtonEspalda_Clicked"/>
+               
+                <ImageButton Source="atras2.png"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="2,0"
+                             BackgroundColor="Transparent"
+                             BorderColor="Transparent"
+                             BorderWidth="0"
+                             Clicked="ReturnButtonLatPulldown_Clicked" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
